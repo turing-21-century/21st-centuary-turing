@@ -1,0 +1,20 @@
+def encrypt(plain_txt,key):
+    cipher_txt=""
+    for i in range(len(plain_txt)):
+        l=ord(plain_txt[i])
+        x=(l+key)%122
+        if(x<97):x+=96
+        cipher_txt+=chr(x)
+    print(cipher_txt)
+    return cipher_txt
+def decrypt(cipher_txt,key):
+    plain_txt=""
+    for i in range(len(cipher_txt)):
+        l=ord(cipher_txt[i])
+        x=l-key
+        if(x<97):x+=26
+        plain_txt+=chr(x)
+    print(plain_txt)
+    return plain_txt
+if __name__=="__main__":
+   #type required function here
