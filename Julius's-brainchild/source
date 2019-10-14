@@ -1,20 +1,20 @@
-def en(pt,k): //encrypt fn in which plain txt and key is given
-    ct="" //setting ct to null
-    for i in range(len(pt)): //for loop to rot each character
-        l=ord(pt[i])  //to find ASCII value of char at ith position
-        x=(l+k)%122  //rot
-        if(x<97):x+=96  //rot
-        ct+=chr(x)   //getting cipher txt
-    print(ct)  //printing ct
-    return ct
-def de(ct,k):  //decrypt fn in which cipher txt and key is given
-    pt=""
-    for i in range(len(ct)): //for loop to rotate each character
-        l=ord(ct[i]) //to find ASCII value of char at ith pos
-        x=l-k  //rot
-        if(x<97):x+=26 //to rot
-        pt+=chr(x)  //to reconvert to char
-    print(pt)  //to print plain txt
-    return pt
+def decrypt():
+    x=input()
+    hri=''
+    for y in range(len(x)):
+
+           z=ord(x[y])
+           if((z>=65 and z<=77)or(z>=97 and z<=109)):
+               z=z+13
+               hri+=chr(z)
+           elif((z>77 and z<=91)or(z>109 and z<=123)):
+               z=z-13
+               hri+=(chr(z))
+           else:
+                hri+=x[y]
+
+
+    print(hri)
+
 if __name__=="__main__":
-  //whatever fn is to be done
+    decrypt()
